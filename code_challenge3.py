@@ -5,11 +5,11 @@
 
 sender_name = input("Enter name: ")
 item_type = input("Type of Item: ")
-is_fragile = bool(input("Fragile(True/False)? "))
 weight = float(input("Weight(kg): "))
 distance = float(input("Distance(km): "))
-is_express = bool(input("Express(True/False)? "))
-is_international = bool(input("International(True/False)? "))
+is_fragile = bool(input("Fragile(Yes/No)? ") == "Yes")
+is_express = bool(input("Express(Yes/No)? ") == "Yes")
+is_international = bool(input("International(Yes/No)? ") == "Yes")
 
 # TOTAL
 
@@ -20,13 +20,13 @@ ov_total = base_cost + 30
 
 # PRINT
 
-if (weight <= 2 and distance <= 100) and (is_express == False and is_international == False):
-	print("Total = 0")
+if (weight <= 2 and distance <= 100) and is_express == False and is_international == False:
+	print("\nTotal = 0")
 elif is_express == True and is_international == True:
 	print("\nTotal =", i_total)
-elif (is_express == True and is_international == True) and weight > 20:
-	print("Total =", eh_total)
+elif (is_express == True or is_international == True) and weight > 20:
+	print("\nTotal =", eh_total)
 elif weight > 30 or distance > 1000:
-	print("Total =", ov_total)
+	print("\nTotal =", ov_total)
 else:
-	print("Total =", base_cost)
+	print("\nTotal =", base_cost)
