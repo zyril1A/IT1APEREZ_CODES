@@ -14,17 +14,22 @@ has_collateral = bool(input("Do you have collateral? (yes/no): ") == "yes")
 if age >= 21 and is_employed == True:
     if credit_score >= 750:
         if annual_income >= 100000:
-            print("Approved at 4.5% interest rate.")
+            print("\nYou have a high credit score and annual income.")
+            print("Approved at 4.5% interest rate.\n")
         else:
-            print("Approved at 5.0% interest rate.")
+            print("\nYou have a high credit score.")
+            print("Approved at 5.0% interest rate.\n")
     if 600 <= credit_score < 750:
         if has_collateral == True:
-            print("Approved at 7.0% interest rate.")
+            print("\nYou have a collateral.")
+            print("Approved at 7.0% interest rate.\n")
         elif annual_income < 40000:
-            print("Approved at 9.5% interest rate.")
+            print("\nYou have a low annual income.")
+            print("Approved at 9.5% interest rate.\n")
         else:
-             print("Approved at 8.0% interest rate.")
+            print("\nYou have a low credit score and annual income.")
+            print("\nApproved at 8.0% interest rate.\n")
     if credit_score < 600:
-        print("Rejected: Credit score too low.")
+        print("\nRejected: Credit score too low.\n")
 else:
-    print("Rejected: Fails baseline criteria.")
+    print("Rejected: Fails baseline criteria.\n")
