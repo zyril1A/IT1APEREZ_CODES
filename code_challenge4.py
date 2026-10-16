@@ -1,10 +1,13 @@
-# CODE CHALLENGE 4
+# LOOPS
 
-for x in range(1, 8):
-    for y in range(7, x):
-        print(y, end = "*")
+for x in range(7, 0, -1):
+    for y in range(x):
+        print("*", end = " ")
     print()
 
+print("\n")
+
 for z in range(1, 6):
-    for r in range(1, 6, 1):
-        pass
+    for s in range(z):
+        print(z, end = " ")
+    print()
